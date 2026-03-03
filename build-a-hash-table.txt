@@ -1,0 +1,57 @@
+** start of main.py **
+
+class HashTable:
+    # Initialize an empty dictionary when class is called:
+    def __init__(self):
+        self.collection = {}
+    #
+    # Find hash key from input string and return it:
+    def hash(self, string):
+        _hashed = sum(ord(ch) for ch in string)
+        return _hashed
+    #
+    # Take key-val pair, make hash key, and add to nested collection dictionary:
+    def add(self, key, val):
+        _hash = self.hash(key)
+        if _hash in self.collection.keys():    
+            self.collection[_hash][key] = val
+        else:    
+            self.collection[_hash] = {key: val}
+    #
+    # Remove key-value pair with given key:
+    def remove(self, key):
+        _hash = self.hash(key)
+        # Confirm hash key exists in dictionary, only remove specific key if multiple under one hash key:
+        if _hash in self.collection.keys() and key in self.collection[_hash].keys():    
+            del self.collection[_hash][key]
+        else:    
+            pass
+        #
+    #
+    # Return the value of the key if the hash value exists in the table:
+    def lookup(self, key):
+        _hash = self.hash(key)
+        if _hash in self.collection.keys() and key in self.collection[_hash].keys():
+            return(self.collection[_hash][key])
+        else: 
+            return None
+    #
+
+### Test Cases:
+
+table1 = HashTable()
+print(table1.hash('golf'))
+table1.add('golf', 'sport')
+table1.add('dear', 'friend')
+table1.add('read', 'book')
+print(table1.collection)
+print(table1.lookup('golf'))
+table1.remove('golf')
+print(table1.lookup('golf'))
+table1.add('fcc', 'coding')
+print(table1.lookup('cfc'))
+
+###
+
+** end of main.py **
+
