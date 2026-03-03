@@ -61,8 +61,8 @@ Passed:16. HashTable().add('dear', 'friend') and HashTable().add('read', 'book')
 Passed:17. When a key exists in the hash table, the remove() method should remove the given key and its corresponding value from the collection.
 Passed:18. When the 'golf', 'sport' key-value pair exists in the hash table, HashTable().lookup('golf') should return sport.
 Passed:19. When the 'golf', 'sport' key-value pair does not exist in the collection, HashTable().lookup('golf') should return None.
-
-END
 Passed:20. When the 'fcc' key exists in the collection, HashTable().lookup('cfc') should return None.
 Passed:21. When you add ('rose', 'flower') to the hash table, its collection attribute should look like this: { 441: { 'rose': 'flower' }}.
 Passed:22. When you add a key that hashes to the same value as an existing key, like fcc and cfc, the collection should look like this: { 300: { 'fcc': 'coding', 'cfc':  'chemical' }}.
+
+END
